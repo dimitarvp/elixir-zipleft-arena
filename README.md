@@ -4,9 +4,17 @@ This is an unified project encompassing all solutions proposed in this ElixirFor
 
 https://elixirforum.com/t/can-you-improve-this-zipping-two-lists-the-result-must-be-same-size-as-the-first-list/45800
 
-Just clone this repo, run `mix deps.get`, then `mix run -e 'ZipLeft.bench'`.
+The algorithm should do the following:
 
-As of 2022-FEB-12, on my machine the result is:
+Given inputs `[1, 2, 3, 4, 5]` and `[:a, :b]` it should return this:
+
+```elixir
+[{1, :a}, {2, :b}, {3, :a}, {4, :b}, {5, :a}]
+```
+
+To run the benchmarks: clone this repo, run `mix deps.get`, then `mix run -e 'ZipLeft.bench'`.
+
+As of 2022-FEB-12, on my machine the result is (Elixir is at `1.13.3-otp-24`, Erlang at `24.2.1`):
 
 ```plain
 Name                                                             ips        average  deviation         median         99th %
